@@ -1,0 +1,1 @@
+# Sentinela100Erro
