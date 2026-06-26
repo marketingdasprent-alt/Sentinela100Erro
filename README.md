@@ -12,8 +12,7 @@ Site estático, sem dependências externas (HTML + CSS + JavaScript vanilla).
 | `index.html` | Estrutura da página |
 | `styles.css` | Estilos (design monocromático e responsivo) |
 | `script.js` | Interações (animações, contadores, cursor) |
-| `logo.png` / `logo-white.png` | Logótipo completo (preto / branco) |
-| `mark.png` / `mark-white.png` | Símbolo isolado (preto / branco) |
+| `images/` | Logótipo e símbolo (versões preta e branca) |
 | `server.js` | Servidor de desenvolvimento (Node nativo, sem dependências) |
 | `package.json` | Scripts npm |
 | `robots.txt` | Indexação por motores de busca |
