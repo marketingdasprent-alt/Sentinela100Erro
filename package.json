@@ -1,0 +1,14 @@
+{
+  "name": "sentinela100erro-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional da SENTINELA100ERRO — SGPS (site em construção).",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

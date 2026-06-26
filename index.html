@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== Segurança ===== -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>SENTINELA100ERRO — Equity Portfolio Management</title>
+  <meta name="description" content="SENTINELA100ERRO — SGPS. Gestão de carteiras de ações e de participações sociais, com rigor e visão de longo prazo. Site em construção." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:title" content="SENTINELA100ERRO — Equity Portfolio Management" />
+  <meta property="og:description" content="Gestão de carteiras de ações e de participações sociais. Site em construção." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
+
+  <link rel="icon" type="image/png" href="mark.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-box">
+      <img src="mark.png" alt="" />
+      <div class="pl-bar"><span></span></div>
+      <div class="pl-tag">SENTINELA100ERRO</div>
+    </div>
+  </div>
+
+  <!-- ===== CURSOR ===== -->
+  <div id="cursor-ring"></div>
+  <div id="cursor"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand-link" data-cursor aria-label="SENTINELA100ERRO — início">
+        <img src="logo.png" alt="SENTINELA100ERRO" />
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <div class="nav-links">
+          <a href="#sobre" data-cursor>Sobre</a>
+          <a href="#servicos" data-cursor>Serviços</a>
+          <a href="#abordagem" data-cursor>Abordagem</a>
+          <a href="#processo" data-cursor>Processo</a>
+        </div>
+        <a href="#contactos" class="cta" data-cursor>Contactar</a>
+      </nav>
+    </div>
+    <div class="scroll-progress" id="progress"></div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <img class="hero-mark" id="heroMark" src="mark.png" alt="" aria-hidden="true" />
+      <div class="wrap hero-inner">
+        <div class="hero-top" data-reveal>
+          <span class="status-pill"><span class="dot"></span>Site em construção</span>
+        </div>
+
+        <h1>
+          <span class="line-mask"><span>Gestão de ativos</span></span>
+          <span class="line-mask"><span>com <em>rigor</em> e</span></span>
+          <span class="line-mask"><span class="thin">visão</span> de futuro.</span>
+        </h1>
+
+        <p class="hero-sub" data-reveal>
+          Estamos a construir a nossa nova presença digital. Em breve, conheça
+          a forma como gerimos carteiras de ações e participações sociais — com
+          disciplina e uma perspetiva orientada para o valor.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a href="tel:+351910205029" class="btn btn-primary" data-cursor>
+            <span class="lbl">Ligar agora</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#sobre" class="btn btn-ghost" data-cursor>
+            <span class="lbl">Saber mais</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="bar"></span>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Equity Portfolio Management</span><span>Participações Sociais</span>
+        <span>Gestão de Risco</span><span>Visão de Longo Prazo</span>
+        <span>Rigor Analítico</span><span>Lisboa</span>
+        <span>Equity Portfolio Management</span><span>Participações Sociais</span>
+        <span>Gestão de Risco</span><span>Visão de Longo Prazo</span>
+        <span>Rigor Analítico</span><span>Lisboa</span>
+      </div>
+    </div>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats" aria-label="Em síntese">
+      <div class="wrap">
+        <div class="stat" data-reveal>
+          <div class="num" data-count="100" data-suffix="%">0</div>
+          <div class="cap">Foco em equity</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="num"><em>∞</em></div>
+          <div class="cap">Horizonte de longo prazo</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="num" data-count="1" data-suffix="">0</div>
+          <div class="cap">Foco. Uma só missão</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="num">LX</div>
+          <div class="cap">Sede em Lisboa</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="block">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Quem somos</p>
+        <div class="about-grid" style="margin-top:1.4rem;">
+          <p class="statement" data-reveal>
+            Uma gestora dedicada a <span class="hl">participações sociais</span> e a
+            <span class="hl">carteiras de ações</span>, com disciplina e foco no valor.
+          </p>
+          <div class="about-aside" data-reveal>
+            <p style="margin-bottom:1.4rem;">
+              A SENTINELA100ERRO é uma sociedade gestora de participações sociais,
+              orientada para a valorização criteriosa e sustentável dos ativos que gere.
+            </p>
+            <div class="kv"><span>Setor</span><span>Gestão de ativos</span></div>
+            <div class="kv"><span>Tipologia</span><span>SGPS</span></div>
+            <div class="kv"><span>Sede</span><span>Lisboa, PT</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVIÇOS ===== -->
+    <section id="servicos" class="block" style="padding-top:0;">
+      <div class="wrap">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow">O que fazemos</p>
+          <h2 class="h-sec">Áreas de <em>atuação</em></h2>
+        </div>
+
+        <div class="cards" data-reveal-stagger>
+          <article class="card" data-tilt data-cursor>
+            <span class="idx">01</span>
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 6-7"/><path d="M14 8h4v4"/></svg></div>
+            <h3>Carteiras de ações</h3>
+            <p>Construção e acompanhamento de carteiras de equity, com seleção criteriosa e gestão de risco contínua.</p>
+            <span class="more">Em breve <span class="arrow">→</span></span>
+          </article>
+
+          <article class="card" data-tilt data-cursor>
+            <span class="idx">02</span>
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h3>Participações sociais</h3>
+            <p>Gestão de participações não financeiras, com foco na valorização de longo prazo e numa governação sólida.</p>
+            <span class="more">Em breve <span class="arrow">→</span></span>
+          </article>
+
+          <article class="card" data-tilt data-cursor>
+            <span class="idx">03</span>
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Gestão de ativos</h3>
+            <p>Alocação disciplinada e monitorização permanente, alinhando cada decisão com objetivos claros e mensuráveis.</p>
+            <span class="more">Em breve <span class="arrow">→</span></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABORDAGEM (dark) ===== -->
+    <section id="abordagem" class="block approach">
+      <div class="wrap split">
+        <div data-reveal>
+          <p class="eyebrow">A nossa abordagem</p>
+          <h2 class="h-sec">Princípios que orientam cada <em>decisão</em>.</h2>
+          <ul class="principles">
+            <li data-cursor><span class="n">01</span><div><h4>Rigor analítico</h4><p>Decisões fundamentadas em análise profunda e critérios consistentes.</p></div></li>
+            <li data-cursor><span class="n">02</span><div><h4>Transparência</h4><p>Comunicação clara e uma relação de confiança em todas as fases.</p></div></li>
+            <li data-cursor><span class="n">03</span><div><h4>Visão de longo prazo</h4><p>Valor sustentável acima do ruído de curto prazo do mercado.</p></div></li>
+            <li data-cursor><span class="n">04</span><div><h4>Gestão de risco</h4><p>Proteção do capital através de disciplina e monitorização contínua.</p></div></li>
+          </ul>
+        </div>
+        <div class="approach-visual" data-reveal aria-hidden="true">
+          <img src="logo-white.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESSO ===== -->
+    <section id="processo" class="block">
+      <div class="wrap">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow">Como trabalhamos</p>
+          <h2 class="h-sec">Um processo <em>metódico</em></h2>
+        </div>
+        <div class="steps" data-reveal-stagger>
+          <div class="step"><span class="dot"></span><span class="st-n">FASE 01</span><h4>Análise</h4><p>Estudo aprofundado de cada oportunidade e do respetivo perfil de risco.</p></div>
+          <div class="step"><span class="dot"></span><span class="st-n">FASE 02</span><h4>Alocação</h4><p>Decisões de investimento disciplinadas e alinhadas com objetivos claros.</p></div>
+          <div class="step"><span class="dot"></span><span class="st-n">FASE 03</span><h4>Acompanhamento</h4><p>Monitorização contínua e ajustes orientados pelo valor de longo prazo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA / CONTACTOS ===== -->
+    <section class="cta-band" id="contactos">
+      <img class="bgmark" src="mark-white.png" alt="" aria-hidden="true" />
+      <div class="wrap">
+        <p class="eyebrow" style="color:var(--muted-2);justify-content:center;" data-reveal>Em breve</p>
+        <h2 data-reveal>O novo site está a <em>caminho</em>.</h2>
+        <p data-reveal>Enquanto preparamos a nossa presença online completa, fale connosco diretamente. Teremos todo o gosto em responder.</p>
+        <a href="tel:+351910205029" class="cta-phone" data-cursor data-reveal>
+          <span class="pre">Tel</span> +351 910 205 029
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand" data-reveal>
+          <img src="logo.png" alt="SENTINELA100ERRO" />
+          <p>Sociedade gestora de participações sociais. Gestão de carteiras de ações e de ativos, com rigor e visão de longo prazo.</p>
+        </div>
+        <div class="footer-col" data-reveal>
+          <h5>Contactos</h5>
+          <ul>
+            <li>
+              <a href="https://maps.google.com/?q=Rua+Castilho+14C+5+1250-069+Lisboa" target="_blank" rel="noopener noreferrer" data-cursor>
+                <address><span class="strong">Morada</span><br>Rua Castilho, 14C, 5<br>1250-069 Lisboa</address>
+              </a>
+            </li>
+            <li style="margin-top:1rem;">
+              <span class="strong">Telemóvel</span><br>
+              <a href="tel:+351910205029" data-cursor>+351 910 205 029</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col" data-reveal>
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#sobre" data-cursor>Sobre</a></li>
+            <li><a href="#servicos" data-cursor>Serviços</a></li>
+            <li><a href="#abordagem" data-cursor>Abordagem</a></li>
+            <li><a href="#processo" data-cursor>Processo</a></li>
+            <li><a href="#contactos" data-cursor>Contactar</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SENTINELA100ERRO — SGPS, Unipessoal Lda. Todos os direitos reservados.</span>
+        <a href="#top" class="to-top" data-cursor>Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
