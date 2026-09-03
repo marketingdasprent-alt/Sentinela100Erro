@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== Segurança ===== -->
+  <!-- frame-ancestors não tem efeito via <meta> (só via cabeçalho HTTP) — já é enviado pelo server.js -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>SENTINELA100ERRO — Equity Portfolio Management</title>
+  <meta name="description" content="SENTINELA100ERRO — SGPS. Gestão de carteiras de ações e de participações sociais, com rigor e visão de longo prazo. Site em construção." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://sentinela100erro.pt/" />
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:title" content="SENTINELA100ERRO — Equity Portfolio Management" />
+  <meta property="og:description" content="Gestão de carteiras de ações e de participações sociais, com rigor e visão de longo prazo." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sentinela100erro.pt/" />
+  <meta property="og:image" content="https://sentinela100erro.pt/images/logo.png" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:site_name" content="SENTINELA100ERRO" />
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SENTINELA100ERRO — Equity Portfolio Management" />
+  <meta name="twitter:description" content="Gestão de carteiras de ações e de participações sociais, com rigor e visão de longo prazo." />
+  <meta name="twitter:image" content="https://sentinela100erro.pt/images/logo.png" />
+
+  <!-- ===== Dados estruturados ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SENTINELA100ERRO",
+    "legalName": "SENTINELA100ERRO — SGPS, Unipessoal Lda.",
+    "url": "https://sentinela100erro.pt/",
+    "logo": "https://sentinela100erro.pt/images/logo.png",
+    "image": "https://sentinela100erro.pt/images/logo.png",
+    "description": "Sociedade gestora de participações sociais. Gestão de carteiras de ações e de ativos, com rigor e visão de longo prazo.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Castilho, 14C, 5",
+      "postalCode": "1250-069",
+      "addressLocality": "Lisboa",
+      "addressCountry": "PT"
+    },
+    "telephone": "+351910205029",
+    "email": "geral@sentinela100erro.pt"
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="images/mark.png" />
+  <link rel="apple-touch-icon" href="images/mark.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-box">
+      <img src="images/mark.png" alt="" />
+      <div class="pl-bar"><span></span></div>
+      <div class="pl-tag">SENTINELA100ERRO</div>
+    </div>
+  </div>
+
+  <!-- ===== CURSOR ===== -->
+  <div id="cursor-ring"></div>
+  <div id="cursor"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand-link" data-cursor aria-label="SENTINELA100ERRO — início">
+        <img src="images/logo.png" alt="SENTINELA100ERRO" />
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <div class="nav-links">
+          <a href="#sobre" data-cursor>Sobre</a>
+          <a href="#equipa" data-cursor>Equipa</a>
+          <a href="#servicos" data-cursor>Serviços</a>
+          <a href="#abordagem" data-cursor>Abordagem</a>
+          <a href="#processo" data-cursor>Processo</a>
+        </div>
+        <a href="#contactos" class="cta" data-cursor>Contactar</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="scroll-progress" id="progress"></div>
+  </header>
+
+  <!-- ===== MOBILE NAV ===== -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav aria-label="Navegação móvel">
+      <a href="#sobre">Sobre</a>
+      <a href="#equipa">Equipa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#abordagem">Abordagem</a>
+      <a href="#processo">Processo</a>
+      <a href="#contactos" class="mobile-cta">Contactar</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-photo" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="images/photo-hero-bg-800.webp 800w, images/photo-hero-bg-1400.webp 1400w, images/photo-hero-bg-2000.webp 1920w" sizes="100vw" />
+          <img src="images/photo-hero-bg-2000.jpg" srcset="images/photo-hero-bg-800.jpg 800w, images/photo-hero-bg-1400.jpg 1400w, images/photo-hero-bg-2000.jpg 1920w" sizes="100vw" width="1920" height="984" alt="" fetchpriority="high" />
+        </picture>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <svg class="hero-chart" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="chartGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" style="stop-color:var(--accent-a)" />
+            <stop offset="100%" style="stop-color:var(--accent-b)" />
+          </linearGradient>
+        </defs>
+        <path class="chart-line chart-line-1" d="M0,360 C150,300 250,340 350,280 C450,220 550,260 650,200 C750,140 850,180 950,120 C1050,70 1150,110 1200,60" />
+        <path class="chart-line chart-line-2" d="M0,420 C150,400 250,410 350,360 C450,320 550,340 650,290 C750,250 850,270 950,220 C1050,190 1150,210 1200,170" />
+        <path class="chart-line chart-line-3" d="M0,460 C150,455 250,445 350,430 C450,415 550,400 650,380 C750,360 850,340 950,315 C1050,295 1150,280 1200,260" />
+      </svg>
+      <img class="hero-mark" id="heroMark" src="images/mark.png" alt="" aria-hidden="true" />
+      <div class="wrap hero-inner">
+        <div class="hero-top" data-reveal>
+          <span class="status-pill"><span class="dot"></span>Site em construção</span>
+        </div>
+
+        <h1>
+          <span class="line-mask"><span>Gestão de ativos</span></span>
+          <span class="line-mask"><span>com <em class="grad">rigor</em> e</span></span>
+          <span class="line-mask"><span class="thin">visão</span> de futuro.</span>
+        </h1>
+
+        <p class="hero-sub" data-reveal>
+          Estamos a construir a nossa nova presença digital. Em breve, conheça
+          a forma como gerimos carteiras de ações e participações sociais — com
+          disciplina e uma perspetiva orientada para o valor.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a href="tel:+351910205029" class="btn btn-primary" data-cursor>
+            <span class="lbl">Ligar agora</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#sobre" class="btn btn-ghost" data-cursor>
+            <span class="lbl">Saber mais</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="bar"></span>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Equity Portfolio Management</span><span>Participações Sociais</span>
+        <span>Gestão de Risco</span><span>Visão de Longo Prazo</span>
+        <span>Rigor Analítico</span><span>Lisboa</span>
+        <span>Equity Portfolio Management</span><span>Participações Sociais</span>
+        <span>Gestão de Risco</span><span>Visão de Longo Prazo</span>
+        <span>Rigor Analítico</span><span>Lisboa</span>
+      </div>
+    </div>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats" aria-label="Em síntese">
+      <div class="wrap">
+        <div class="stat" data-reveal>
+          <div class="num grad" data-count="100" data-suffix="%">0</div>
+          <div class="cap">Foco em equity</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="num"><em>∞</em></div>
+          <div class="cap">Horizonte de longo prazo</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="num" data-count="1" data-suffix="">0</div>
+          <div class="cap">Foco. Uma só missão</div>
+        </div>
+        <div class="stat" data-reveal>
+          <div class="num">LX</div>
+          <div class="cap">Sede em Lisboa</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="block">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Quem somos</p>
+        <div class="about-grid" style="margin-top:1.4rem;">
+          <p class="statement" data-reveal>
+            Uma gestora dedicada a <span class="hl">participações sociais</span> e a
+            <span class="hl">carteiras de ações</span>, com disciplina e foco no valor.
+          </p>
+          <div class="about-aside" data-reveal>
+            <div class="about-photo">
+              <picture>
+                <source type="image/webp" srcset="images/photo-about-480.webp 480w, images/photo-about-800.webp 800w, images/photo-about-1100.webp 1100w" sizes="(max-width: 720px) 90vw, 480px" />
+                <img src="images/photo-about-800.jpg" srcset="images/photo-about-480.jpg 480w, images/photo-about-800.jpg 800w, images/photo-about-1100.jpg 1100w" sizes="(max-width: 720px) 90vw, 480px" width="1100" height="1467" alt="Pormenor arquitetónico em Lisboa" loading="lazy" />
+              </picture>
+            </div>
+            <p style="margin-bottom:1.4rem;">
+              A SENTINELA100ERRO é uma sociedade gestora de participações sociais,
+              orientada para a valorização criteriosa e sustentável dos ativos que gere.
+            </p>
+            <div class="kv"><span>Setor</span><span>Gestão de ativos</span></div>
+            <div class="kv"><span>Tipologia</span><span>SGPS</span></div>
+            <div class="kv"><span>Sede</span><span>Lisboa, PT</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EQUIPA (placeholder — nomes e bios fictícios, substituir por dados reais) ===== -->
+    <section id="equipa" class="block" style="padding-top:0;">
+      <div class="wrap">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow">Quem lidera</p>
+          <h2 class="h-sec">Uma equipa <em>experiente</em>.</h2>
+        </div>
+        <div class="team-grid" data-reveal-stagger>
+          <article class="team-card" data-cursor>
+            <div class="team-avatar"><span>MC</span></div>
+            <h4>Miguel Castro</h4>
+            <p class="team-role">Sócio-gerente</p>
+            <p class="team-bio">Percurso em mercados de capitais europeus, com foco em equity e alocação disciplinada.</p>
+          </article>
+          <article class="team-card" data-cursor>
+            <div class="team-avatar"><span>BN</span></div>
+            <h4>Beatriz Nogueira</h4>
+            <p class="team-role">Diretora de Investimentos</p>
+            <p class="team-bio">Lidera a análise fundamental e a construção de carteiras orientadas para o valor.</p>
+          </article>
+          <article class="team-card" data-cursor>
+            <div class="team-avatar"><span>RF</span></div>
+            <h4>Rui Falcão</h4>
+            <p class="team-role">Gestão de Risco</p>
+            <p class="team-bio">Responsável pela monitorização contínua e proteção de capital em todas as posições.</p>
+          </article>
+          <article class="team-card" data-cursor>
+            <div class="team-avatar"><span>IS</span></div>
+            <h4>Inês Salgado</h4>
+            <p class="team-role">Relações Institucionais</p>
+            <p class="team-bio">Ponto de contacto para parceiros, participadas e relações de longo prazo.</p>
+          </article>
+        </div>
+        <p class="section-note">Equipa ilustrativa — a apresentação final será atualizada brevemente.</p>
+      </div>
+    </section>
+
+    <!-- ===== SERVIÇOS ===== -->
+    <section id="servicos" class="block" style="padding-top:0;">
+      <div class="wrap">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow">O que fazemos</p>
+          <h2 class="h-sec">Áreas de <em>atuação</em></h2>
+        </div>
+
+        <div class="cards" data-reveal-stagger>
+          <article class="card" data-tilt data-cursor>
+            <span class="idx">01</span>
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 6-7"/><path d="M14 8h4v4"/></svg></div>
+            <h3>Carteiras de ações</h3>
+            <p>Construção e acompanhamento de carteiras de equity, com seleção criteriosa e gestão de risco contínua.</p>
+            <span class="more">Em breve <span class="arrow">→</span></span>
+          </article>
+
+          <article class="card" data-tilt data-cursor>
+            <span class="idx">02</span>
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h3>Participações sociais</h3>
+            <p>Gestão de participações não financeiras, com foco na valorização de longo prazo e numa governação sólida.</p>
+            <span class="more">Em breve <span class="arrow">→</span></span>
+          </article>
+
+          <article class="card" data-tilt data-cursor>
+            <span class="idx">03</span>
+            <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3>Gestão de ativos</h3>
+            <p>Alocação disciplinada e monitorização permanente, alinhando cada decisão com objetivos claros e mensuráveis.</p>
+            <span class="more">Em breve <span class="arrow">→</span></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABORDAGEM (dark) ===== -->
+    <section id="abordagem" class="block approach">
+      <div class="wrap split">
+        <div data-reveal>
+          <p class="eyebrow">A nossa abordagem</p>
+          <h2 class="h-sec">Princípios que orientam cada <em>decisão</em>.</h2>
+          <ul class="principles">
+            <li data-cursor><span class="n">01</span><div><h4>Rigor analítico</h4><p>Decisões fundamentadas em análise profunda e critérios consistentes.</p></div></li>
+            <li data-cursor><span class="n">02</span><div><h4>Transparência</h4><p>Comunicação clara e uma relação de confiança em todas as fases.</p></div></li>
+            <li data-cursor><span class="n">03</span><div><h4>Visão de longo prazo</h4><p>Valor sustentável acima do ruído de curto prazo do mercado.</p></div></li>
+            <li data-cursor><span class="n">04</span><div><h4>Gestão de risco</h4><p>Proteção do capital através de disciplina e monitorização contínua.</p></div></li>
+          </ul>
+        </div>
+        <div class="approach-visual" data-reveal aria-hidden="true">
+          <div class="dash-head">
+            <span class="dash-dot"></span>
+            <span>Ecossistema de decisão</span>
+          </div>
+          <div class="gauges" data-reveal-stagger>
+            <div class="gauge">
+              <svg viewBox="0 0 80 80"><circle class="gauge-trail" cx="40" cy="40" r="34"/><circle class="gauge-arc gauge-arc-1" cx="40" cy="40" r="34"/></svg>
+              <div class="gauge-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
+              <span>Rigor</span>
+            </div>
+            <div class="gauge">
+              <svg viewBox="0 0 80 80"><circle class="gauge-trail" cx="40" cy="40" r="34"/><circle class="gauge-arc gauge-arc-2" cx="40" cy="40" r="34"/></svg>
+              <div class="gauge-ico"><svg viewBox="0 0 24 24"><path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <span>Transparência</span>
+            </div>
+            <div class="gauge">
+              <svg viewBox="0 0 80 80"><circle class="gauge-trail" cx="40" cy="40" r="34"/><circle class="gauge-arc gauge-arc-3" cx="40" cy="40" r="34"/></svg>
+              <div class="gauge-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2.2 5.2-5.2 2.2 2.2-5.2z"/></svg></div>
+              <span>Visão</span>
+            </div>
+            <div class="gauge">
+              <svg viewBox="0 0 80 80"><circle class="gauge-trail" cx="40" cy="40" r="34"/><circle class="gauge-arc gauge-arc-4" cx="40" cy="40" r="34"/></svg>
+              <div class="gauge-ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+              <span>Risco</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESSO ===== -->
+    <section id="processo" class="block">
+      <div class="wrap">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow">Como trabalhamos</p>
+          <h2 class="h-sec">Um processo <em>metódico</em></h2>
+        </div>
+        <div class="steps" data-reveal-stagger>
+          <div class="step"><span class="dot"></span><span class="st-n">FASE 01</span><h4>Análise</h4><p>Estudo aprofundado de cada oportunidade e do respetivo perfil de risco.</p></div>
+          <div class="step"><span class="dot"></span><span class="st-n">FASE 02</span><h4>Alocação</h4><p>Decisões de investimento disciplinadas e alinhadas com objetivos claros.</p></div>
+          <div class="step"><span class="dot"></span><span class="st-n">FASE 03</span><h4>Acompanhamento</h4><p>Monitorização contínua e ajustes orientados pelo valor de longo prazo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NÚMEROS (placeholder — métricas ilustrativas, substituir por dados reais) ===== -->
+    <section id="numeros" class="block" style="padding-top:0;">
+      <div class="wrap">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow">Em números</p>
+          <h2 class="h-sec">Disciplina que se <em>reflete</em> nos resultados.</h2>
+        </div>
+        <div class="metrics-panel glass" data-reveal>
+          <svg class="area-chart" viewBox="0 0 800 220" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" style="stop-color:var(--accent-a);stop-opacity:.32" />
+                <stop offset="100%" style="stop-color:var(--accent-b);stop-opacity:0" />
+              </linearGradient>
+            </defs>
+            <path class="area-fill" d="M0,180 C80,165 120,120 200,130 C280,140 320,90 400,80 C480,70 520,45 600,38 C680,32 720,14 800,8 L800,220 L0,220 Z" />
+            <path class="area-line" d="M0,180 C80,165 120,120 200,130 C280,140 320,90 400,80 C480,70 520,45 600,38 C680,32 720,14 800,8" />
+          </svg>
+          <div class="metrics-row" data-reveal-stagger>
+            <div class="metric">
+              <span class="metric-num grad" data-count="12" data-suffix="">0</span>
+              <span class="metric-cap">Anos de experiência combinada</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num grad" data-count="30" data-suffix="+">0</span>
+              <span class="metric-cap">Posições analisadas por trimestre</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num grad" data-count="100" data-suffix="%">0</span>
+              <span class="metric-cap">Capital próprio alinhado</span>
+            </div>
+          </div>
+          <p class="section-note">Ilustrativo — dados de demonstração, não constituem histórico de performance real.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PERSPETIVAS / INSIGHTS (placeholder — conteúdo editorial fictício) ===== -->
+    <section id="insights" class="block" style="padding-top:0;">
+      <div class="wrap">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow">Perspetivas</p>
+          <h2 class="h-sec">Como <em>pensamos</em> o mercado.</h2>
+        </div>
+        <div class="insight-grid" data-reveal-stagger>
+          <article class="insight-card">
+            <div class="insight-graphic"><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,45 C30,40 40,20 70,25 C100,30 110,10 140,12 C160,13 180,5 200,3" /></svg></div>
+            <span class="insight-tag">Mercados</span>
+            <h4>Disciplina em ciclos de volatilidade</h4>
+            <p>Como mantemos o foco no valor de longo prazo quando o ruído de curto prazo domina as manchetes.</p>
+          </article>
+          <article class="insight-card">
+            <div class="insight-graphic"><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,20 C25,35 45,45 70,38 C95,31 110,15 140,22 C165,28 180,18 200,30" /></svg></div>
+            <span class="insight-tag">Governação</span>
+            <h4>O que procuramos numa participação social</h4>
+            <p>Os critérios de governação e alinhamento de interesses que pesam em cada decisão de longo prazo.</p>
+          </article>
+          <article class="insight-card">
+            <div class="insight-graphic"><svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,10 C20,10 30,40 55,42 C80,44 90,18 115,20 C140,22 155,48 200,50" /></svg></div>
+            <span class="insight-tag">Risco</span>
+            <h4>Proteger capital antes de o multiplicar</h4>
+            <p>Porque a gestão de risco vem primeiro na forma como avaliamos qualquer nova posição.</p>
+          </article>
+        </div>
+        <p class="section-note">Em breve — artigos completos nesta secção.</p>
+      </div>
+    </section>
+
+    <!-- ===== CTA / CONTACTOS ===== -->
+    <section class="cta-band" id="contactos">
+      <div class="cta-photo" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="images/photo-belem-800.webp 800w, images/photo-belem-1400.webp 1400w, images/photo-belem-2000.webp 1920w" sizes="100vw" />
+          <img src="images/photo-belem-2000.jpg" srcset="images/photo-belem-800.jpg 800w, images/photo-belem-1400.jpg 1400w, images/photo-belem-2000.jpg 1920w" sizes="100vw" width="1920" height="1403" alt="" loading="lazy" />
+        </picture>
+      </div>
+      <img class="bgmark" src="images/mark-white.png" alt="" aria-hidden="true" />
+      <div class="wrap contact-grid">
+        <div class="contact-copy" data-reveal>
+          <p class="eyebrow" style="color:var(--muted-2-dark);">Em breve</p>
+          <h2>O novo site está a <em>caminho</em>.</h2>
+          <p>Enquanto preparamos a nossa presença online completa, fale connosco diretamente. Teremos todo o gosto em responder.</p>
+          <a href="tel:+351910205029" class="cta-phone" data-cursor>
+            <span class="pre">Tel</span> +351 910 205 029
+          </a>
+        </div>
+
+        <div class="contact-card glass-dark" data-reveal>
+          <div class="contact-row">
+            <span class="contact-label">Morada</span>
+            <a href="https://maps.google.com/?q=Rua+Castilho+14C+5+1250-069+Lisboa" target="_blank" rel="noopener noreferrer" data-cursor>Rua Castilho, 14C, 5<br>1250-069 Lisboa</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Telemóvel</span>
+            <a href="tel:+351910205029" data-cursor>+351 910 205 029</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">E-mail</span>
+            <a href="mailto:geral@sentinela100erro.pt" data-cursor>geral@sentinela100erro.pt</a>
+          </div>
+          <a href="https://maps.google.com/?q=Rua+Castilho+14C+5+1250-069+Lisboa" target="_blank" rel="noopener noreferrer" class="contact-map-link" data-cursor>
+            <span>Ver no mapa</span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand" data-reveal>
+          <img src="images/logo.png" alt="SENTINELA100ERRO" />
+          <p>Sociedade gestora de participações sociais. Gestão de carteiras de ações e de ativos, com rigor e visão de longo prazo.</p>
+        </div>
+        <div class="footer-col" data-reveal>
+          <h5>Contactos</h5>
+          <ul>
+            <li>
+              <a href="https://maps.google.com/?q=Rua+Castilho+14C+5+1250-069+Lisboa" target="_blank" rel="noopener noreferrer" data-cursor>
+                <address><span class="strong">Morada</span><br>Rua Castilho, 14C, 5<br>1250-069 Lisboa</address>
+              </a>
+            </li>
+            <li style="margin-top:1rem;">
+              <span class="strong">Telemóvel</span><br>
+              <a href="tel:+351910205029" data-cursor>+351 910 205 029</a>
+            </li>
+            <li style="margin-top:1rem;">
+              <span class="strong">E-mail</span><br>
+              <a href="mailto:geral@sentinela100erro.pt" data-cursor>geral@sentinela100erro.pt</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col" data-reveal>
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#sobre" data-cursor>Sobre</a></li>
+            <li><a href="#equipa" data-cursor>Equipa</a></li>
+            <li><a href="#servicos" data-cursor>Serviços</a></li>
+            <li><a href="#abordagem" data-cursor>Abordagem</a></li>
+            <li><a href="#processo" data-cursor>Processo</a></li>
+            <li><a href="#numeros" data-cursor>Números</a></li>
+            <li><a href="#insights" data-cursor>Perspetivas</a></li>
+            <li><a href="#contactos" data-cursor>Contactar</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="photo-credits">
+        Fotografia: <a href="https://commons.wikimedia.org/wiki/File:Bay_of_Lisbon_(aerial_view).jpg" target="_blank" rel="noopener noreferrer">Zinneke</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:Baixa_de_Lisboa_-_decora%C3%A7%C3%A3o.jpg" target="_blank" rel="noopener noreferrer">Jaime Silva</a> e
+        <a href="https://commons.wikimedia.org/wiki/File:Lisbon_Torre_de_Bel%C3%A9m_BW_2018-10-03_16-33-21.jpg" target="_blank" rel="noopener noreferrer">Berthold Werner</a>,
+        via Wikimedia Commons (CC BY-SA).
+      </p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 SENTINELA100ERRO — SGPS, Unipessoal Lda. Todos os direitos reservados. · <a href="privacidade.html" data-cursor style="text-decoration:underline;">Privacidade</a></span>
+        <a href="#top" class="to-top" data-cursor>Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

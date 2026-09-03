@@ -1,0 +1,13 @@
+{
+  "name": "SENTINELA100ERRO — Equity Portfolio Management",
+  "short_name": "SENTINELA100ERRO",
+  "description": "Sociedade gestora de participações sociais. Gestão de carteiras de ações e de ativos, com rigor e visão de longo prazo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3f2ef",
+  "theme_color": "#0a0a0a",
+  "lang": "pt-PT",
+  "icons": [
+    { "src": "images/mark.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
