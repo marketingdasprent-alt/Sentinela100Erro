@@ -1,0 +1,14 @@
+{
+  "name": "sentinela100erro-legacy-static",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Protótipo estático arquivado da SENTINELA100ERRO — substituído pela app Next.js na raiz do repositório.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

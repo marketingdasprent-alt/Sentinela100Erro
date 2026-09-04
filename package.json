@@ -1,14 +1,25 @@
 {
   "name": "sentinela100erro-site",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Site institucional da SENTINELA100ERRO — SGPS (site em construção).",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "engines": {
-    "node": ">=18"
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "resend": "^6.25.0"
   },
-  "license": "UNLICENSED"
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "typescript": "^5"
+  }
 }

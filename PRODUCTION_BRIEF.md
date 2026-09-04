@@ -1,5 +1,11 @@
 # SENTINELA100ERRO — Prompt de construção do site em produção
 
+> **Estado: executado.** Este documento é o prompt original que deu origem à app Next.js
+> hoje na raiz do repositório — fica como registo histórico do plano. A app já não vive
+> em `web/` (foi movida para a raiz, para o Vercel a detetar automaticamente sem precisar
+> de configurar Root Directory); o protótipo estático original está arquivado em
+> `legacy-static/`.
+
 > Este documento é um prompt autossuficiente. Cola-o inteiro numa conversa nova (comigo
 > ou noutro agente) quando quiseres arrancar a construção — não depende do histórico
 > desta conversa para fazer sentido.

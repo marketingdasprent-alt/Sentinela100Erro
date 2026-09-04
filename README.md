@@ -1,57 +1,56 @@
-# SENTINELA100ERRO — Site institucional
+# SENTINELA100ERRO — site de produção (Next.js)
 
-Página institucional ("site em construção") da **SENTINELA100ERRO — SGPS, Unipessoal Lda.**,
-sociedade gestora de participações sociais.
+Versão de produção do site institucional, construída em Next.js (App Router) + React,
+substituindo o protótipo estático arquivado em `legacy-static/`. Ver `PRODUCTION_BRIEF.md`
+para o contexto completo da migração e a checklist de conteúdo real por fornecer.
 
-Site estático, sem dependências externas (HTML + CSS + JavaScript vanilla).
+> Esta app vive na **raiz do repositório** (não numa subpasta `web/`) de propósito —
+> plataformas como o Vercel detetam Next.js automaticamente na raiz, sem precisar de
+> configurar nenhuma "Root Directory".
+
+## Estado atual
+
+Conteúdo **fictício/placeholder** onde ainda não existem dados reais da empresa —
+equipa, números e artigos de "Perspetivas". Ver comentários no topo de cada ficheiro em
+`src/content/` para o que precisa de ser substituído antes de publicar.
+
+## Desenvolvimento local
+
+```bash
+npm install
+npm run dev
+```
+
+Abrir <http://localhost:3000>.
+
+## Variáveis de ambiente
+
+Copiar `.env.example` para `.env.local` e preencher:
+
+- `RESEND_API_KEY` — necessário para o formulário de contacto enviar e-mail a sério
+  (sem isto, o formulário aceita submissões mas só regista nos logs do servidor,
+  não envia). Criar conta em [resend.com](https://resend.com).
+- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — definir para ativar o script de analytics
+  (Plausible, sem cookies). Omitir para desativar analytics.
+- `NEXT_PUBLIC_SITE_URL` — domínio público, usado em metadados/sitemap.
+
+## Deploy (Vercel)
+
+```bash
+npx vercel
+```
+
+Configurar as mesmas variáveis de ambiente no dashboard do projeto na Vercel antes do
+primeiro deploy de produção.
 
 ## Estrutura
 
-| Ficheiro | Função |
+| Caminho | Conteúdo |
 |---|---|
-| `index.html` | Estrutura da página |
-| `privacidade.html` | Política de privacidade (RGPD) |
-| `styles.css` | Estilos (design monocromático e responsivo) |
-| `script.js` | Interações (animações, contadores, cursor) |
-| `images/` | Logótipo, símbolo e fotos otimizadas (WebP + JPG, múltiplos tamanhos) |
-| `images/originals/` | Fotos originais em alta resolução (não servidas ao site — usar para gerar novos tamanhos) |
-| `server.js` | Servidor de desenvolvimento (Node nativo, sem dependências) |
-| `package.json` | Scripts npm |
-| `robots.txt` | Indexação por motores de busca (aponta para `sitemap.xml`) |
-| `sitemap.xml` | Mapa do site para motores de busca |
-| `manifest.json` | Metadados para instalação como app (PWA-lite) |
-
-> **Nota:** `canonical`, Open Graph, Twitter Card e os dados estruturados (JSON-LD) em
-> `index.html` assumem o domínio `https://sentinela100erro.pt/`. Se o domínio final for
-> outro, atualizar essas referências antes de publicar.
-
-## Ver localmente
-
-Requer [Node.js](https://nodejs.org) (versão 18 ou superior). Na pasta do projeto:
-
-```bash
-npm start
-```
-
-Depois abrir <http://localhost:8080>.
-
-Para usar outra porta:
-
-```bash
-PORT=4000 npm start
-```
-
-> O servidor não tem dependências externas (usa apenas o módulo `http` do Node)
-> e envia os mesmos cabeçalhos de segurança de produção (CSP, etc.), pelo que o
-> ambiente local replica fielmente o site publicado.
-
-## Publicar (GitHub Pages)
-
-1. Fazer *commit* e *push* dos ficheiros para o GitHub.
-2. Em **Settings → Pages**, escolher a branch `main` e a pasta raiz (`/root`).
-3. O site fica disponível em `https://<utilizador>.github.io/<repositório>/`.
-
-## Contactos
-
-- **Morada:** Rua Castilho, 14C, 5 · 1250-069 Lisboa
-- **Telemóvel:** +351 910 205 029
+| `src/app/` | Rotas (App Router) — home, `/equipa`, `/perspetivas`, `/contactos`, `/privacidade` |
+| `src/components/chrome/` | Header, cursor customizado, preloader (globais, client components) |
+| `src/components/sections/` | Secções da home reutilizadas noutras páginas |
+| `src/components/ui/` | Primitivas reutilizáveis (Reveal, Counter, TiltCard) |
+| `src/content/` | Dados do site — equipa, artigos, constantes institucionais |
+| `src/app/globals.css` | Sistema de design (tokens, componentes) migrado do site estático |
+| `src/app/api/contact/route.ts` | Route Handler do formulário de contacto (via Resend) |
