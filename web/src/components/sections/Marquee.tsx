@@ -4,7 +4,6 @@ const ITEMS = [
   "Gestão de Risco",
   "Visão de Longo Prazo",
   "Rigor Analítico",
-  "Lisboa",
 ];
 
 export function Marquee() {

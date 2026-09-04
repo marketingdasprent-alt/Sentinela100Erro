@@ -248,12 +248,15 @@ html.has-custom-cursor, html.has-custom-cursor * { cursor:none; }
 
 .btn {
   --bg:var(--ink); --fg:var(--paper);
-  position:relative; display:inline-flex; align-items:center; gap:.6rem;
+  position:relative; display:inline-flex; align-items:center; gap:.4rem;
   font-size:.86rem; font-weight:700; letter-spacing:.03em;
-  padding:1rem 1.7rem; border-radius:999px; border:1px solid var(--ink);
+  padding:1rem 1.6rem; border-radius:999px; border:1px solid var(--ink);
   overflow:hidden; isolation:isolate; transition:color .4s var(--ease), transform .3s var(--ease);
   cursor:pointer; background:none; font-family:inherit;
 }
+/* botões com seta ficam com menos respiro do lado direito — a seta deve
+   quase tocar a borda do "pill", não sobrar tanto espaço vazio depois dela */
+.btn:has(.arrow) { padding-right:1.1rem; }
 .btn .lbl { position:relative; z-index:1; }
 .btn::before { content:""; position:absolute; inset:0; z-index:0; background:var(--bg); transform:translateY(0); transition:transform .45s var(--ease); }
 .btn-primary { color:var(--fg); }
@@ -282,6 +285,12 @@ html.has-custom-cursor, html.has-custom-cursor * { cursor:none; }
   .hero-top, .hero h1, .hero-sub { margin-inline:auto; text-align:center; }
   .hero h1 { max-width:none; }
   .hero-actions { justify-content:center; }
+  /* nowrap: em ecrãs muito estreitos, forçar os dois botões à mesma largura
+     (tentativa anterior) não deixava espaço para "Fale connosco" numa linha
+     só — o texto quebrava a meio e o botão ficava mais alto e torto. Assim,
+     se não couber, é o botão inteiro que passa para a linha de baixo (o
+     .hero-actions já tem flex-wrap:wrap), nunca o texto lá dentro. */
+  .hero-actions .btn { white-space:nowrap; }
 }
 
 /* Cabeçalho compacto para páginas internas (equipa, perspetivas, contactos) */
